@@ -3,10 +3,6 @@ import unittest
 
 
 class NewVisitorTest(unittest.TestCase):
-    """
-    docstring
-    """
-
     def setUp(self) -> None:
         self.browser = webdriver.Firefox
 
