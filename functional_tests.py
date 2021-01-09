@@ -43,9 +43,6 @@ class NewVisitorTest(unittest.TestCase):
         # "1: Buy peacock feathers" as an item in a to-do list
         inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
-
-        table = self.browser.find_element_by_id('id_list_table')
-        rows = table.find_elements_by_tag_name('tr')
         self.check_for_row_in_list_table('1: Buy peacock feathers')
 
         # There is still a textbox inviting her to add another item. She
