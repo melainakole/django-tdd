@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block header_text %}To-Do lists{% endblock %}
+{% block header_text %}Your To-Do list{% endblock %}
 
 {% block form_action %}/lists/{{ list.id }}/add_item{% endblock %}
 
 {% block table %}
-    <table aria-label="To-do tasks" id="id_list_table">
+    <table aria-label="To-do tasks" class="table" id="id_list_table">
       <tr>
         <th scope="col">Activity</th>
       </tr>
