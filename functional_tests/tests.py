@@ -30,7 +30,6 @@ class NewVisitorTest(LiveServerTestCase):
                 time.sleep(0.5)
 
     def test_can_start_a_list_and_retrieve_it_later(self):
-        self.browser = webdriver.Firefox()
         # Edith has heard about a new online to-do app. She goes
         # to check out its homepage
         self.browser.get(self.live_server_url)
@@ -69,16 +68,9 @@ class NewVisitorTest(LiveServerTestCase):
         # The page updates again, and now shows both items on her list
         inputbox.send_keys(Keys.ENTER)
 
-        self.wait_for_row_in_list_table('1: Buy peacock feathers')
         self.wait_for_row_in_list_table(
             '2: Use peacock feathers to make a fly')
-
-        # Edith wonders whether the site will remember her list. Then she sees
-        # that the site has generated a unique URL for her -- there is some
-        # explanatory text to that effect.
-        self.fail('Finish the test!')
-
-        # She visits that URL -- her to-do list is still there.
+        self.wait_for_row_in_list_table('1: Buy peacock feathers')
 
         # Satisfied, she goes back to sleep.
 
